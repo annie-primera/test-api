@@ -19,9 +19,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: false
-        
-      - name: Build second
-        uses: docker/build-push-action@v3
-        with:
-          push: false
-          target: runner
+          context: .
+          file: Dockerfile
