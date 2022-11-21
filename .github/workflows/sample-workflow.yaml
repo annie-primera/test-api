@@ -6,3 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "I'm working!"
+
+
+  Docker-fun:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+        
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: false
+          
