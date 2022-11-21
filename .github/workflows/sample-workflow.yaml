@@ -15,8 +15,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
         
-      - name: Build and push
+      - name: Build first
         uses: docker/build-push-action@v3
         with:
           push: false
-          
+        
+      - name: Build second
+        uses: docker/build-push-action@v3
+        with:
+          push: false
+          target: runner
