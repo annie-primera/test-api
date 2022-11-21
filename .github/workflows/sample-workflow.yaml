@@ -1,6 +1,25 @@
 name: First test
 run-name: Just testing things
 on: [push]
-runs:
-  using: 'docker'
-  image: Dockerfile
+jobs:
+  First-Attempt:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I'm working!"
+
+
+  Docker-fun:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build image
+        uses: docker/build-push-action@v3
+        with:
+          push: false
+          
+      - name: Something
+        run: |
+          docker build -t api-test .
