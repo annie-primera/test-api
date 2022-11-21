@@ -1,0 +1,8 @@
+name: First test
+run-name: Just testing things
+on: [push]
+jobs:
+  First-Attempt:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I'm working!"
