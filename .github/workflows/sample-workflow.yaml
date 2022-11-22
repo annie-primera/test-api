@@ -19,8 +19,10 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: false
+          network: "host"
+          imageid: api-test
+
           
-      - name: Where am I
+      - name: Docker?
         run: |
-          echo "$PWD"
-          ls
+          run docker build -t api-test
