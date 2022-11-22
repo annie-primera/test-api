@@ -64,8 +64,9 @@ def create_boss(*, boss_in: BossCreate) -> dict:
         id=new_boss_id,
         name=boss_in.name,
         location=boss_in.location,
-
     )
+    BOSSES.append(boss_entry.dict())
+    return boss_entry.dict()
 
 
 app.include_router(api_router)
