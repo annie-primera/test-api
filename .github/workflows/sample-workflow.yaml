@@ -20,10 +20,10 @@ jobs:
         with:
           push: false
           network: "host"
-        outputs:
-          imageid: api-test
+          tags:
+            api-test:latest
 
           
       - name: Docker?
         run: |
-          run docker build -t api-test
+          run docker build -t api-test:latest
