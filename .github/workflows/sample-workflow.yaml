@@ -7,7 +7,7 @@ jobs:
     steps:
       - run: echo "I'm working!"
 
-  Get new json:
+  Get-new-json:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
@@ -27,7 +27,7 @@ jobs:
           path: openapi.json
 
 
-  Get old json:
+  Get-old-json:
     runs-on: ubuntu-latest
     steps:
       - name: checkout existing repo
