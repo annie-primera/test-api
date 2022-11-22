@@ -34,5 +34,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Build docker image
         run: docker-compose build
+      - name: run the container
+        run: docker run --network="host" test-api_small-api:latest
       - name: Get the openapijson
         run: curl http://localhost:8003/openapi.json
