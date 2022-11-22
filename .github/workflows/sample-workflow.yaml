@@ -22,6 +22,8 @@ jobs:
           network: "host"
           tags:
             api-test:latest
+        run: |
+          docker images
 
           
       - name: Docker?
