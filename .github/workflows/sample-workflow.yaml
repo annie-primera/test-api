@@ -29,10 +29,10 @@ jobs:
 
   Docker-use:
     runs-on: ubuntu-latest
-    container:
-      image: docker://ahibert/small-api:latest
-      ports:
-        - 8003
     steps:
-      - name: I don't even know
-        run: 
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Build docker image
+        run: docker-compose build
+      - name: Run docker image
+        run: docker-compose run

@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  small-api:
+    build:
+      context: .
+    ports:
+      - "8003:8003"
