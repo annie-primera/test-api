@@ -26,7 +26,13 @@ jobs:
           push: true
           tags: ahibert/small-api:latest
 
-          
-      - name: Docker?
-        run: |
-          docker images
+
+  Docker-use:
+    runs-on: ubuntu-latest
+    container:
+      image: docker://ahibert/small-api:latest
+      ports:
+        - 8003
+    steps:
+      - name: I don't even know
+        run: 
