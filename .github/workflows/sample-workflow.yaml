@@ -26,4 +26,4 @@ jobs:
           
       - name: Docker?
         run: |
-          docker run api-test:latest
+          docker images
