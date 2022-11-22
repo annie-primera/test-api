@@ -18,4 +18,5 @@ jobs:
           python-version: 3.10.8
       - name: python maybe?
         run: |
+          pip install fastapi
           python json_get.py
