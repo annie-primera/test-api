@@ -1,6 +1,6 @@
 name: First test
 run-name: Just testing things
-on: [push]
+on: [pull-request]
 jobs:
   First-Attempt:
     runs-on: ubuntu-latest
