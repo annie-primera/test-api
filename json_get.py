@@ -10,5 +10,3 @@ with open('openapi.json', 'w') as f:
         description=app.description,
         routes=app.routes,
     ), f)
-
-print("success?")
