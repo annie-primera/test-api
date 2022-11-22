@@ -23,3 +23,4 @@ jobs:
       - name: Where am I
         run: |
           echo "$PWD"
+          ls
