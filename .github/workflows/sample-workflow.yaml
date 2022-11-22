@@ -26,4 +26,4 @@ jobs:
           
       - name: Docker?
         run: |
-          run docker build -t api-test:latest
+          docker run api-test:latest
