@@ -7,7 +7,7 @@ jobs:
     steps:
       - run: echo "I'm working!"
 
-  Python-maybe:
+  Get new json:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
@@ -24,5 +24,27 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: new-json
+          path: openapi.json
+
+
+  Get old json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout existing repo
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.10.8
+      - name: get openapi json
+        run: |
+          pip install fastapi
+          python json_get.py
+      - name: upload openapi json as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: old-json
           path: openapi.json
 
