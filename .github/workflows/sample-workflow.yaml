@@ -49,7 +49,7 @@ jobs:
           path: openapi.json
 
   Test-docker-thing:
-    needs: Get-new-json, Get-old-json
+    needs: [Get-new-json, Get-old-json]
     runs-on: ubuntu-latest
     container:
       image: ahibert/test-api-test:latest
