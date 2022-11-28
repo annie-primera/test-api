@@ -56,6 +56,6 @@ jobs:
       volumes:
         - ${pwd}:json_docs
     steps:
-      - name: Run docker container?
+      - name: Run docker container??
         run: docker run test-api-test:latest
 
