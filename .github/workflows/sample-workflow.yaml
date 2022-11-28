@@ -1,5 +1,5 @@
 name: First test
-run-name: Just testing things
+run-name: API Change testing
 on: [pull_request]
 jobs:
   First-Attempt:
@@ -47,4 +47,15 @@ jobs:
         with:
           name: old-json
           path: openapi.json
+
+  Test-docker-thing:
+    needs: Get-new-json, Get-old-json
+    runs-on: ubuntu-latest
+    container:
+      image: ahibert/test-api-test:latest
+      volumes:
+        - ${pwd}:json_docs
+    steps:
+      - name: Run docker container?
+        run: docker run test-api-test:latest
 
