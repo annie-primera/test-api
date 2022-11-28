@@ -49,13 +49,10 @@ jobs:
           path: openapi.json
 
   Test-docker-thing:
-    needs: [Get-new-json, Get-old-json]
     runs-on: ubuntu-latest
-    container:
-      image: ahibert/test-api-test:latest
-      volumes:
-        - ${pwd}:json_docs
     steps:
-      - name: Run docker container??
-        run: docker run test-api-test:latest
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: Pull docker container??
+        run: docker pull ahibert/test-api-test:latest
 
