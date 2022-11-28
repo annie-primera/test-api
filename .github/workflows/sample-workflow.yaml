@@ -1,6 +1,6 @@
 name: First test
 run-name: API Change testing
-on: [pull_request]
+on: [push]
 jobs:
   First-Attempt:
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: new-json
-          path: old-json.json
+          path: openapi.json
 
 
   Get-old-json:
@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: old-json
-          path: new-json.json
+          path: openapi.json
 
   Test-docker-thing:
     runs-on: ubuntu-latest
