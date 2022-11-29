@@ -37,15 +37,14 @@ jobs:
         run: |
           pip install fastapi
           python json_get.py
-      - name: upload openapi json as artifact
+      - name: Change file name
+        run: mv openapi.json old-json.json
+      - name: Upload openapi json as artifact
         uses: actions/upload-artifact@v3
         with:
           name: old-json
-          path: openapi.json
-      - name: Change file name
-        run: mv openapi.json old-json.json
-      - name: Did it work?
-        run: ls
+          path: old-json.json
+
 
   Test-docker-thing:
     runs-on: ubuntu-latest
