@@ -62,6 +62,6 @@ jobs:
         run: ls
       - name: Another attempt
         run: |
-          docker run --name test-container --mount type=bind,source=$(pwd)/old-json,target=/app/json_docs -it ahibert/test-api-testing:latest
+          docker run --name test-container --mount type=bind,source=$(pwd)/old-json,target=/app/json_docs ahibert/test-api-testing:latest
 
 
