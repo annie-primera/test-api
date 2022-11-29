@@ -15,11 +15,13 @@ jobs:
         run: |
           pip install fastapi
           python json_get.py
+      - name: Change filename
+        run: mv openapi.json new-json.json
       - name: upload openapi json as artifact
         uses: actions/upload-artifact@v3
         with:
           name: new-json
-          path: openapi.json
+          path: new-json.json
 
 
   Get-old-json:
