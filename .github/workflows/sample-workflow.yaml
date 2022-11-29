@@ -56,12 +56,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Download artifacts
         uses: actions/download-artifact@v3
+        with:
+          name: old-json
       - name: Pull docker container
         run: docker pull ahibert/test-api-testing:latest
       - name: WHERE ARE THE FILES
         run: ls
       - name: Another attempt
         run: |
-          docker run --mount type=bind,source=$PWD/old-json/,target=/json_docs/ ahibert/test-api-testing:latest
+          docker run --mount type=bind,source=$PWD,target=/json_docs/ ahibert/test-api-testing:latest
 
 
