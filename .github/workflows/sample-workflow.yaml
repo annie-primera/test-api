@@ -47,6 +47,8 @@ jobs:
         with:
           name: old-json
           path: openapi.json
+      - name: is the file even here?
+        run: ls
 
   Test-docker-thing:
     runs-on: ubuntu-latest
