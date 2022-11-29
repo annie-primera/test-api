@@ -58,10 +58,10 @@ jobs:
         uses: actions/download-artifact@v3
       - name: Pull docker container
         run: docker pull ahibert/test-api-testing:latest
-      - name: I'm honestly running out of ideas
-        run: cat old-json/old-json.json
+      - name: WHERE ARE THE FILES
+        run: ls
       - name: Another attempt
         run: |
-          docker run --mount type=bind,source=$PWD/old-json,target=/json_docs ahibert/test-api-testing:latest
+          docker run --mount type=bind,source=$PWD/old-json/old-json.json,target=/json_docs ahibert/test-api-testing:latest
 
 
