@@ -61,6 +61,9 @@ jobs:
       - name: I'm honestly running out of ideas
         run: cat old-json/old-json.json
       - name: Another attempt
-        run: docker run -v $PWD:$PWD ahibert/test-api-testing:latest -i old-json/old-json.json
+        run: |
+          docker run  
+          --mount type=bind,source=/old-json,target=/json_docs
+          ahibert/test-api-testing:latest
 
 
