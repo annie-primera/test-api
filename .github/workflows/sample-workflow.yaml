@@ -51,11 +51,17 @@ jobs:
   Test-docker-thing:
     runs-on: ubuntu-latest
     needs: [Get-new-json, Get-old-json]
-    container:
-      image: ahibert/test-api-testing:latest
-      options: -v ${{ github.workspace }}:/json_docs
     steps:
-      - name: I don't know
-        run: docker run ahibert/test-api-testing:latest
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+      - name: Pull docker container
+        run: docker pull ahibert/test-api-testing:latest
+      - name: WHERE ARE THE FILES
+        run: ls
+      - name: Another attempt
+        run: |
+          docker run --name test-container --mount type=bind,source=$(pwd)/old-json,target=/app/json_docs -it ahibert/test-api-testing:latest
 
 
