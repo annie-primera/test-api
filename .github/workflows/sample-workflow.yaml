@@ -53,8 +53,7 @@ jobs:
     needs: [Get-new-json, Get-old-json]
     container:
       image: ahibert/test-api-testing:latest
-      volumes:
-        ${{ github.workspace }}:/json_docs
+      options: -v ${{ github.workspace }}:/json_docs
     steps:
       - name: I don't know
         run: python main.py
