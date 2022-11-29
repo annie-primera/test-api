@@ -62,8 +62,8 @@ jobs:
         run: docker pull ahibert/test-api-testing:latest
       - name: WHERE ARE THE FILES
         run: ls
-      - name: Another attempt...
+      - name: Another attempt
         run: |
-          docker run --mount type=bind,source=$PWD,target=/json_docs ahibert/test-api-testing:latest
+          docker run ahibert/test-api-testing:latest
 
 
