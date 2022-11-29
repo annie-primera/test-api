@@ -2,11 +2,6 @@ name: First test
 run-name: API Change testing
 on: [push]
 jobs:
-  First-Attempt:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "I'm working!"
-
   Get-new-json:
     runs-on: ubuntu-latest
     steps:
@@ -47,7 +42,9 @@ jobs:
         with:
           name: old-json
           path: openapi.json
-      - name: is the file even here?
+      - name: Change file name
+        run: mv openapi.json old-json.json
+      - name: Did it work?
         run: ls
 
   Test-docker-thing:
