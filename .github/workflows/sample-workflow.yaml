@@ -58,6 +58,8 @@ jobs:
         uses: actions/download-artifact@v3
       - name: Pull docker container
         run: docker pull ahibert/test-api-testing:latest
+      - name: Copy files?
+        run: docker copy old-json/old-json.json ahibert/test-api-testing:/json_docs
       - name: Run the image please??
-        run: docker run -v /old-json/old-json.json:/json_docs/old-json.json ahibert/test-api-testing:latest
+        run: docker run ahibert/test-api-testing:latest
 
