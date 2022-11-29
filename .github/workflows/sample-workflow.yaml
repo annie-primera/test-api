@@ -58,7 +58,7 @@ jobs:
         uses: actions/download-artifact@v3
       - name: Pull docker container
         run: docker pull ahibert/test-api-testing:latest
-      - name: where files
-        run: cd /old-json | ls
+      - name: I'm honestly running out of ideas
+        run: cat old-json/old-json.json
 
 
