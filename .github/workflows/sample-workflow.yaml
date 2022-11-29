@@ -57,7 +57,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v3
       - name: Pull docker container
-        run: docker pull ahibert/test-api-test:latest
-      - name: Do I have the image?
-        run: docker run ahibert/test-api-test:latest
+        run: docker pull ahibert/test-api-testing:latest
+      - name: Run the image
+        run: docker run ahibert/test-api-testing:latest
 
