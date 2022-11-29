@@ -58,8 +58,6 @@ jobs:
         uses: actions/download-artifact@v3
       - name: Pull docker container
         run: docker pull ahibert/test-api-testing:latest
-      - name: WHERE ARE THE FILES
-        run: ls
       - name: Another attempt
         run: |
           docker run --name test-container --mount type=bind,source=$(pwd)/old-json,target=/app/old-json --mount type=bind,source=$(pwd)/new-json,target=/app/new-json ahibert/test-api-testing:latest
