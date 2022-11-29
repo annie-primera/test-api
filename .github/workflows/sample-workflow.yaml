@@ -60,5 +60,7 @@ jobs:
         run: docker pull ahibert/test-api-testing:latest
       - name: I'm honestly running out of ideas
         run: cat old-json/old-json.json
+      - name: Another attempt
+        run: docker run -v ${pwd}/old-json/old-json.json:/json_docs/old-json.json ahibert/test-api-testing:latest
 
 
