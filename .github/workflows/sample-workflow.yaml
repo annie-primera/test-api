@@ -56,6 +56,6 @@ jobs:
       options: -v ${{ github.workspace }}:/json_docs
     steps:
       - name: I don't know
-        run: python main.py
+        run: docker run ahibert/test-api-testing:latest
 
 
