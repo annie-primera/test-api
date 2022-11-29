@@ -54,7 +54,7 @@ jobs:
     container:
       image: ahibert/test-api-testing:latest
       volumes:
-        ${{ github.workspace }}/old-json.json:/json_docs/old-json.json
+        ${{ github.workspace }}:/json_docs
     steps:
       - name: I don't know
         run: python main.py
