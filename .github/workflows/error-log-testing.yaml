@@ -11,6 +11,6 @@ jobs:
         run: |
           echo "Message goes here" >> $GITHUB_STEP_SUMMARY
       - name: Issues?
-        uses: actions/add-to-project@v1
+        uses: actions/add-to-project@RELEASE_VERSION
         with:
           labeled: needs-triage
