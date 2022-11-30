@@ -1,6 +1,6 @@
 name: First test
 run-name: API Change testing
-on: [push]
+on: [pull_request]
 jobs:
   Get-new-json:
     runs-on: ubuntu-latest
