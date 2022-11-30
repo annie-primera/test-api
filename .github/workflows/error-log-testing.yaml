@@ -1,7 +1,7 @@
 run-name: Error log testing
 on: [pull_request]
 jobs:
-  Get-new-json:
+  Message-testing:
     runs-on: ubuntu-latest
     steps:
       - name: Warning message
