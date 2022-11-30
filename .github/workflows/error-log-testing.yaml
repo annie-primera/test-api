@@ -1,0 +1,9 @@
+run-name: Error log testing
+on: [push]
+jobs:
+  Get-new-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Warning message
+        run: | 
+          ""::warning title=warning::This is a warning""
