@@ -1,6 +1,6 @@
 name: First test
 run-name: API Change testing
-on: [pull_request]
+on: [workflow_dispatch]
 jobs:
   Get-new-json:
     runs-on: ubuntu-latest
