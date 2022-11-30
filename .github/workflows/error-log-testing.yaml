@@ -7,3 +7,6 @@ jobs:
       - name: Warning message
         run: | 
           echo ""::warning title=warning::This is a warning""
+      - name: Job summary?
+        run: |
+          echo "Message goes here" >> $GITHUB_STEP_SUMMARY
