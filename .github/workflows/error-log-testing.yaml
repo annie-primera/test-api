@@ -7,7 +7,9 @@ jobs:
       - name: Warning message
         run: | 
           echo ""::warning title=warning::This is a warning""
-          exit 1
       - name: Job summary?
         run: |
           echo "Message goes here" >> $GITHUB_STEP_SUMMARY
+      - name: Issues?
+        uses: actions/add-to-project@v1
+        labeled: needs-triage
