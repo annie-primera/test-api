@@ -6,4 +6,4 @@ jobs:
     steps:
       - name: Warning message
         run: | 
-          ""::warning title=warning::This is a warning""
+          echo ""::warning title=warning::This is a warning""
