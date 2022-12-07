@@ -1,6 +1,6 @@
 name: First test
 run-name: API Change testing
-on: [pull_request]
+on: [push]
 jobs:
   Get-new-json:
     runs-on: ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
           docker run --name test-container --mount type=bind,source=$(pwd)/old-json,target=/app/old-json --mount type=bind,source=$(pwd)/new-json,target=/app/new-json ahibert/api-testing:latest additions
       - name: Random warning
         run: |
-          echo "::warning::Random warning"
+          echo "::warning::file=main.pyRandom warning"
       - name: Random error
         run: |
           echo "::error::Random error"
