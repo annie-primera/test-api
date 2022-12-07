@@ -64,3 +64,6 @@ jobs:
       - name: Random warning
         run: |
           echo "::warning::Random warning"
+      - name: Random error
+        run: |
+          echo "::error::Random error"
