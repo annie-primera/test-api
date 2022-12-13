@@ -61,9 +61,9 @@ jobs:
       - name: Run docker container
         run: |
           docker run --name test-container --mount type=bind,source=$(pwd)/old-json,target=/app/old-json --mount type=bind,source=$(pwd)/new-json,target=/app/new-json ahibert/api-testing:latest additions
-      - name: Random warning
-        run: |
-          echo "::warning::file=main.pyRandom warning"
-      - name: Random error
-        run: |
-          echo "::error::Random error"
+          docker cp test-container:/logger.txt
+      - name: Upload log as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: changelogs
+          path: logger.txt
