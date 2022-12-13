@@ -1,0 +1,10 @@
+Version has changed from 0.1.0 to 0.0.1
+Deleted endpoint: /api/alive
+Something deleted in /api/imaging/takeFrames
+Deleted response: 200 in /api/imaging/takeFrames
+Added endpoint: deleted_endpoint
+Added endpoint: deleted_endpoint_2
+Added response: 400 in /api/health endpoint
+Added schema: DeletableSchema
+Added non-required parameter in /api/imaging/takeFrames: {'required': False, 'schema': {'title': 'Frame Rate Hz', 'minimum': 0.0, 'type': 'number'}, 'example': 5, 'name': 'frame_rate_hz', 'in': 'query'}
+Added required parameter in /api/imaging/takeFrames: {'required': True, 'schema': {'title': 'DeleteMe', 'type': 'string'}, 'example': 'deleted!', 'name': 'deleted_param', 'in': 'query'}

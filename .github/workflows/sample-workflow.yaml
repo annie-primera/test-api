@@ -48,7 +48,7 @@ jobs:
           path: old-json.json
 
 
-  Test-docker-thing:
+  Generate-changelogs:
     runs-on: ubuntu-latest
     needs: [Get-new-json, Get-old-json]
     steps:
@@ -67,3 +67,21 @@ jobs:
         with:
           name: changelogs
           path: logger.txt
+
+  Check-changes:
+    runs-on: ubuntu-latest
+    needs: [Generate-changelogs]
+    steps:
+      - name: Download log artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: changelogs
+      - name: Compare texts
+        run: |
+          file1=logger.txt
+          file2=accepted_changes.txt
+          if cmp -s "$file1" "$file2"; then
+            printf 'Files are the same'
+          else
+            printf 'UNAUTHORIZED CHANGES ABORT ABORT"
+          fi
