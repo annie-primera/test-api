@@ -78,8 +78,8 @@ jobs:
           name: changelogs
       - name: Compare texts
         run: |
-          file1=logger.txt
-          file2=accepted_changes.txt
+          file1="logger.txt"
+          file2="accepted_changes.txt"
           if cmp -s "$file1" "$file2"; then
             printf 'Files are the same'
           else
