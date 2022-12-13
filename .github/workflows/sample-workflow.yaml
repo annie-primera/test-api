@@ -91,4 +91,5 @@ jobs:
         run: |
           cat "logger.txt"
       - name: Fine, we'll do this your way
+        run: |
           cat "accepted_changes.txt"
