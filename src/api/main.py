@@ -1,6 +1,6 @@
 from fastapi import FastAPI, APIRouter, Query
 from typing import Optional
-from schemas import Boss, BossCreate, BossSearchResults
+from api.schemas import Boss, BossCreate, BossSearchResults
 
 app = FastAPI(
     title="Elden Ring Bosses",

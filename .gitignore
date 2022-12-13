@@ -156,3 +156,4 @@ cython_debug/
 .idea/
 /.github/workflows/unused.yaml
 /openapi.json
+/src/openapi.json
