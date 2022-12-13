@@ -81,13 +81,7 @@ jobs:
       - name: Compare texts
         run: |
           if diff -u --ignore-space-change --strip-trailing-cr --ignore-blank-lines logger.txt accepted_changes.txt; then
-            printf "Files are the same"
+            printf "No unauthorized changes"
           else
-            printf "UNAUTHORIZED CHANGES ABORT ABORT"
+            exit 1
           fi
-      - name: What do they actually look like?
-        run: |
-          cat "logger.txt"
-      - name: Fine, we'll do this your way
-        run: |
-          cat "accepted_changes.txt"

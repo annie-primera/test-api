@@ -1,1 +1,1 @@
-WARNING:root:Added endpoint: /health/
+WARNING:root:Added endpoint:
