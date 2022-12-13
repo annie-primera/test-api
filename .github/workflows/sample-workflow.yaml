@@ -16,7 +16,8 @@ jobs:
       - name: get openapi json
         run: |
           pip install fastapi
-          python -m src/json_get
+          cd src
+          python -m json_get
       - name: Change filename
         run: mv openapi.json new-json.json
       - name: upload openapi json as artifact
