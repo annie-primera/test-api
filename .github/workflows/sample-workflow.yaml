@@ -60,7 +60,7 @@ jobs:
         run: docker pull ahibert/api-testing:latest
       - name: Run docker container
         run: |
-          docker run --name test-container --mount type=bind,source=$(pwd)/old-json,target=/app/old-json --mount type=bind,source=$(pwd)/new-json,target=/app/new-json ahibert/api-testing:latest additions
+          docker run --name test-container --mount type=bind,source=$(pwd)/old-json,target=/app/old-json --mount type=bind,source=$(pwd)/new-json,target=/app/new-json ahibert/api-testing:latest all_changes
           docker cp test-container:app/logger.txt .
       - name: Upload logs as artifact
         uses: actions/upload-artifact@v3
