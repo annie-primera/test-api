@@ -1,7 +1,7 @@
 FROM python:3-slim-bullseye as builder
 WORKDIR /app
 COPY . ./
-COPY ./requirements.txt .
+COPY src/requirements.txt .
 RUN pip install -r requirements.txt
 
 FROM builder as runner
