@@ -80,7 +80,7 @@ jobs:
           name: changelogs
       - name: Compare texts
         run: |
-          if cmp -l logger.txt accepted_changes.txt; then
+          if diff -u --ignore-space-change --strip-trailing-cr --ignore-blank-lines logger.txt accepted_changes.txt; then
             printf "Files are the same"
           else
             printf "UNAUTHORIZED CHANGES ABORT ABORT"
