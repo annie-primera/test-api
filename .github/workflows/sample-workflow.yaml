@@ -85,3 +85,7 @@ jobs:
           else
             printf "UNAUTHORIZED CHANGES ABORT ABORT"
           fi
+      - name: What do they actually look like?
+        run: |
+          cat "logger.txt"
+          cat "accepted_changes.txt"
