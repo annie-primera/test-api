@@ -19,7 +19,7 @@ jobs:
           cd src
           python -m json_get
       - name: Change filename
-        run: mv openapi.json new-json.json
+        run: mv src/openapi.json new-json.json
       - name: upload openapi json as artifact
         uses: actions/upload-artifact@v3
         with:
