@@ -1,6 +1,6 @@
 from fastapi import FastAPI, APIRouter, Query
 from typing import Optional
-from schemas import Boss, BossCreate, BossSearchResults
+from api.schemas import Boss, BossCreate, BossSearchResults
 
 app = FastAPI(
     title="Elden Ring Bosses",
@@ -67,6 +67,11 @@ def create_boss(*, boss_in: BossCreate) -> dict:
     )
     BOSSES.append(boss_entry.dict())
     return boss_entry.dict()
+
+
+@api_router.get("/health/", status_code=200)
+def health_check():
+    return "Healthy!"
 
 
 app.include_router(api_router)
